@@ -4,12 +4,18 @@ using namespace std;
 
 int main()
 {
-   int d, s, k, c = 1, a = 1;
+
+   // Initiating variables that will be used in the program
+   int d, s, k, c = 1, a = 1, er = 1;
    double m, id, dt = 0;
    bool ch = true;
    char cho;
+
+   // Starting the loop that will have the main program
    do
    {
+
+      // this part is a welcome screen that has a lot of information about the program
       cout << "                           Welcome to the Frog Jump Challenge!";
       cout << R"(
                                         .--._.--.
@@ -35,44 +41,64 @@ When the jumps get too short, the frog takes a break.
 Let's see if our froggy friend can make it to cover the specified distance!)"
            << endl;
 
+      // This is the part where the user inputs all the necessary values(3 tries incase of error)
       cout << "Please enter the value of D (in m) : ";
       cin >> d;
-      while (d < 0)
+      while (d < 0 && er < 3)
       {
+         er++;
          cout << "The value of D needs to be a postivie integer !!" << endl
               << "Please enter the value of D (in m) : ";
          cin >> d;
       }
-
+      if (er == 3)
+      {
+         cout << "You have entered an unacceptable value more than 3 times !!" << endl;
+         break;
+      }
+      er = 0;
       cout << "Please enter the value of S (in cm) : ";
       cin >> s;
-      while (s < 0)
+      while (s < 0 && er < 3)
       {
+         er++;
          cout << "The value of S needs to be a postivie integer !!" << endl
               << "Please enter the value of S (in cm) : ";
          cin >> s;
       }
+      if (er == 3)
+      {
+         cout << "You have entered an unacceptable value more than 3 times !!" << endl;
+         break;
+      }
+      er = 0;
       cout << "Please enter the value of K (in cm) : ";
       cin >> k;
-      while (k < 0)
+      while (k < 0 && er < 3)
       {
+         
          cout << "The value of K needs to be a postivie integer !!" << endl
               << "Please enter the value of K (in cm) : ";
          cin >> k;
+      }
+      if (er == 3)
+      {
+         cout << "You have entered an unacceptable value more than 3 times !!" << endl;
+         break;
       }
       m = (double)s;
       id = (double)d * 100;
       while (dt < id)
       {
-         if (m < k )
+         if (m < k)
          {
             ch = false;
-            c = c-1;
+            c = c - 1;
             break;
          }
          dt += m;
-         cout<<"Steps : "<<c<<" / Distance traveled : "<<dt<<endl;
-         if (c % 5 == 0 && c!=0)
+         cout << "Steps : " << c << " / Distance traveled : " << dt << endl;
+         if (c % 5 == 0 && c != 0)
          {
             m = s / ((double)a + 1);
             a++;
