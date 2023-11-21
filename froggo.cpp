@@ -6,15 +6,19 @@ int main()
 {
 
    // Initiating variables that will be used in the program
-   int d, s, k, c = 1, a = 1, er = 1;
-   double m, id, dt = 0;
-   bool ch = true;
+   int d, s, k, c, a, er;
+   double m, id, dt;
+   bool ch;
    char cho;
 
    // Starting the loop that will have the main program
    do
    {
 
+      dt = 0;
+      c = 1, a = 1, er = 1;
+      ch = true;
+      
       // this part is a welcome screen that has a lot of information about the program
       cout << "                           Welcome to the Frog Jump Challenge!";
       cout << R"(
@@ -51,10 +55,14 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
               << "Please enter the value of D (in m) : ";
          cin >> d;
       }
-      if (er == 3)
+      if (er == 3 && d < 0)
       {
          cout << "You have entered an unacceptable value more than 3 times !!" << endl;
-         break;
+         cout << "Do you want to continue? (y/n): ";
+         cin >> cho;
+         system("cls");
+         er = 0;
+         continue;
       }
       er = 0;
       cout << "Please enter the value of S (in cm) : ";
@@ -66,10 +74,14 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
               << "Please enter the value of S (in cm) : ";
          cin >> s;
       }
-      if (er == 3)
+      if (er == 3 && s < 0)
       {
          cout << "You have entered an unacceptable value more than 3 times !!" << endl;
-         break;
+         cout << "Do you want to continue? (y/n): ";
+         cin >> cho;
+         system("cls");
+         er = 0;
+         continue;
       }
       er = 0;
       cout << "Please enter the value of K (in cm) : ";
@@ -81,10 +93,14 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
               << "Please enter the value of K (in cm) : ";
          cin >> k;
       }
-      if (er == 3)
+      if (er == 3 && k<0)
       {
          cout << "You have entered an unacceptable value more than 3 times !!" << endl;
-         break;
+         cout << "Do you want to continue? (y/n): ";
+         cin >> cho;
+         system("cls");
+         er = 0;
+         continue;
       }
       m = (double)s;
       id = (double)d * 100;
@@ -97,12 +113,10 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
             break;
          }
          dt += m;
-         cout << "Steps : " << c << " / Distance traveled : " << dt << endl;
          if (c % 5 == 0 && c != 0)
          {
             m = s / ((double)a + 1);
             a++;
-            cout << "New step is :" << m << endl;
          }
          c = c + 1;
       }
@@ -118,6 +132,6 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
       cout << "Do you want to continue? (y/n): ";
       cin >> cho;
       system("cls");
-   } while (cho == 'y' || cho == 'Y');
+   } while (cho == 'y' || cho == 'Y' );
    return 0;
 }
