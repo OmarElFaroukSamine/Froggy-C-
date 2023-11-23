@@ -1,4 +1,4 @@
-                                                                # Froggy-C-
+							# Froggy-C-
 This program is my first assignment in my programming journey.
 This program is in C++ language. it's about calculating whether a frog can cross a certain distance based on 3 arguments; 
 D: the total distance to calculate.
