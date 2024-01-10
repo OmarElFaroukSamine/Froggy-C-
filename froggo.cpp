@@ -65,7 +65,7 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
          cout << "You have entered an unacceptable value more than 3 times !!" << endl;
          cout << "Do you want to continue? (y/n): ";
          cin >> cho;
-         system("cls");
+         system("clear");
          continue;
       }
       // i reset the value of er to give each value 3 tries each
@@ -84,7 +84,7 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
          cout << "You have entered an unacceptable value more than 3 times !!" << endl;
          cout << "Do you want to continue? (y/n): ";
          cin >> cho;
-         system("cls");
+         system("clear");
          continue;
       }
       er = 0;
@@ -102,7 +102,7 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
          cout << "You have entered an unacceptable value more than 3 times !!" << endl;
          cout << "Do you want to continue? (y/n): ";
          cin >> cho;
-         system("cls");
+         system("clear");
          continue;
       }
       
@@ -117,7 +117,7 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
          cout << "The value of the limit K cannot be bigger than the initial jump S !!" << endl;
          cout << "Do you wish to restart? (y/n): ";
          cin >> cho;
-         system("cls");
+         system("clear");
          continue;
       }
       while (dt < id)
@@ -150,7 +150,7 @@ Let's see if our froggy friend can make it to cover the specified distance!)"
       cin >> cho;
       /*used this to make the command clear itself when the user wants a restart.
        also to keep the instructions visible at every start of the program*/
-      system("cls");
+      system("clear");
    } while (cho == 'y' || cho == 'Y');
    return 0;
 }
