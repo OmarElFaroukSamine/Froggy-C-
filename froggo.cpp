@@ -1,6 +1,7 @@
 
 // Library includes and name space for std library
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
